@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginDescriptionFile;
 
 import us.th3controller.regioncontrol.RegionControl;
@@ -20,6 +21,14 @@ public class CmdRegionControl implements CommandExecutor {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		if(args.length == 2) {
+			Player player = (Player)sender;
+			if(args[0].equalsIgnoreCase("create")) {
+				if(plugin.pos1.containsKey(player.getName()) && plugin.pos2.containsKey(player.getName())) {
+					//Create region information in regions.yml
+				}
+			}
+		}
 		if(args.length == 1) {
 			if(args[0].equalsIgnoreCase("?") || args[0].equalsIgnoreCase("help")) {
 				ChatColor yellow = ChatColor.YELLOW;
