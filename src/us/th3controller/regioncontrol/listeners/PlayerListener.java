@@ -23,19 +23,17 @@ public class PlayerListener implements Listener {
 		if(event.getItem().equals(Material.GHAST_TEAR)) {
 			if(event.getAction().equals(Action.LEFT_CLICK_BLOCK)) {
 				Block clicked = event.getClickedBlock();
-				String world = clicked.getWorld().getName();
 				int x = clicked.getLocation().getBlockX();
 				int y = clicked.getLocation().getBlockY();
 				int z = clicked.getLocation().getBlockZ();
-				plugin.pos1.put(event.getPlayer().getName(), world+":"+x+":"+y+":"+z);
+				plugin.pos1.put(event.getPlayer().getName(), x+":"+y+":"+z);
 			}
 			else if(event.getAction().equals(Action.RIGHT_CLICK_BLOCK)) {
 				Block clicked = event.getClickedBlock();
-				String world = clicked.getWorld().getName();
 				int x = clicked.getLocation().getBlockX();
 				int y = clicked.getLocation().getBlockY();
 				int z = clicked.getLocation().getBlockZ();
-				plugin.pos2.put(event.getPlayer().getName(), world+":"+x+":"+y+":"+z);
+				plugin.pos2.put(event.getPlayer().getName(), x+":"+y+":"+z);
 			}
 		}
 	}
