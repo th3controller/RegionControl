@@ -6,6 +6,7 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import us.th3controller.regioncontrol.commands.CmdRegionControl;
+import us.th3controller.regioncontrol.listeners.BlockListener;
 import us.th3controller.regioncontrol.listeners.PlayerListener;
 import us.th3controller.regioncontrol.util.Log;
 import us.th3controller.regioncontrol.util.Regions;
@@ -24,6 +25,7 @@ public class RegionControl extends JavaPlugin {
 		Regions.loadRegions();
 		getCommand("regioncontrol").setExecutor(new CmdRegionControl(this));
 		getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+		getServer().getPluginManager().registerEvents(new BlockListener(this), this);
 	}
 	@Override
 	public void onDisable() {
